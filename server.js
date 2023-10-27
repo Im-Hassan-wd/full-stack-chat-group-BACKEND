@@ -5,11 +5,14 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const groupRoutes = require("./routes/groupRoutes");
 const userRoutes = require("./routes/userRoutes");
+var corsOptions = {
+  origin: "https://full-stack-chat-group-backend.vercel.app/",
+};
 
 // express app
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 // middleware
 app.use(express.json());
