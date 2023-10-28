@@ -5,17 +5,17 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const groupRoutes = require("./routes/groupRoutes");
 const userRoutes = require("./routes/userRoutes");
-const corsOptions = {
-  origin: ["https://full-stack-chat-group.vercel.app"],
-  methods: ["POST", "GET", "PATCH"],
-  credentials: true,
-};
+// const corsOptions = {
+//   origin: ["https://full-stack-chat-group.vercel.app"],
+//   methods: ["POST", "GET", "PATCH"],
+//   credentials: true,
+// };
 
 // express app
 const app = express();
 
 // CORS
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // middleware
 app.use(express.json());
