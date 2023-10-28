@@ -5,13 +5,16 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const groupRoutes = require("./routes/groupRoutes");
 const userRoutes = require("./routes/userRoutes");
-var corsOptions = {
-  origin: "https://full-stack-chat-group-backend.vercel.app/",
+const corsOptions = {
+  origin: ["https://full-stack-chat-group.vercel.app"],
+  methods: ["POST", "GET", "PATCH"],
+  credentials: true,
 };
 
 // express app
 const app = express();
 
+// CORS
 app.use(cors(corsOptions));
 
 // middleware
@@ -32,7 +35,7 @@ mongoose
   .then(() => {
     // listen for request
     app.listen(process.env.PORT, () => {
-      console.log("coneected to db &listening on port", process.env.PORT);
+      console.log("connected to db & listening on port", process.env.PORT);
     });
   })
   .catch((error) => console.log(error));
